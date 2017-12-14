@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pomodoro Timer</title>
+    <link href="https://fonts.googleapis.com/css?family=Italianno" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,23 +12,24 @@
 </head>
 <body>
 
-    <div>
+    <div class="text-center">
         <h1>Build a Pomodoro Clock</h1>
-        <h3>FreeCodeCamp Advance Front-End Project</h3>
+        <h2>FreeCodeCamp Advance Front-End Project</h2>
+        <img class="logo" src="img/logo.png">
         <div id="timeDiv">
             <h1 id="title1">Session Time</h1>
-            <a href="#" class="btn btn-primary" id="minus5Clock">-</a>
+            <a href="#" class="btn btn-danger" id="minus5Clock">-</a>
             <h2 id="num">5</h2>
-            <a href="#" class="btn btn-primary" id="add5Clock">+</a>
-            <a href="#" class="btn btn-primary" id="reset">Reset</a>
+            <a href="#" class="btn btn-danger" id="add5Clock">+</a>
+            <a href="#" class="btn btn-danger" id="reset">Reset</a>
         </div>
         <div id="breakDiv">
             <h1 id="title2">Break Time</h1>
-            <a href="#" class="btn btn-primary" id="minus5Break">-</a>
+            <a href="#" class="btn btn-danger" id="minus5Break">-</a>
             <h2 id="breakNum">5</h2>
-            <a href="#" class="btn btn-primary" id="add5Break">+</a>
+            <a href="#" class="btn btn-danger" id="add5Break">+</a>
         </div>
-        <a href="#" class="btn btn-primary" id="start">Start</a>
+        <a href="#" class="btn btn-danger" id="start">Start</a>
     </div>
 
 </body>

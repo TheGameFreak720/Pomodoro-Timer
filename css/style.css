@@ -1,0 +1,25 @@
+* {
+    font-family: 'Italianno', cursive;
+}
+
+body {
+    background-color: #ecf0f1 !important;
+}
+
+h1 {
+    color: #c0392b !important;
+}
+
+h2 {
+    color: #27ae60 !important;
+    display: inline;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+}
+
+#start {
+    margin: 20px;
+}
