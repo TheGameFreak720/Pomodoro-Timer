@@ -5,6 +5,30 @@ $(document).ready(function () {
     var breakTime = parseInt($('#breakNum').html());
     $('#reset').hide();
 
+    //Start Timer
+    $('#start').click(function() {
+        var counter= setInterval(timer, 1000);
+
+        function timer() {
+            count -= 1;
+            //Hide variables
+            $('#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #breakNum, #title1, #title2').hide();
+            $('#timeType').html('Session Time: ');
+
+            if (count === 0) {
+                buzzer.play();
+                clearInterval(counter);
+                var startBreak = setInterval(breakTimer, 1000);
+            }
+
+            $('#num').html(count);
+        }
+
+        function breakTimer() {
+            $('#timeType').html('Break Time: ');
+        }
+    });
+
     //Work Time
     $('#minus5Clock').click(function(){
         if (count > 5) {
