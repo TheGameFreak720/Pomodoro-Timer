@@ -13,6 +13,7 @@ $(document).ready(function () {
             count -= 1;
             //Hide variables
             $('#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #breakNum, #title1, #title2').hide();
+            $('#timeType').show();
             $('#timeType').html('Session Time: ');
 
             if (count === 0) {
@@ -31,11 +32,22 @@ $(document).ready(function () {
 
                 if (breakTime === 0) {
                     clearInterval(startBreak);
+                    $('#reset').show();
+                    $('#breakNum, #timeType').hide();
                 }
 
                 $('#breakNum').html(breakTime);
             }
         }
+    });
+
+    $('#reset').click(function() {
+        count = 25;
+        breakTime = 25;
+        $('#num').html(count);
+        $('#breakNum').html(breakTime);
+        $('#start, #minus5Clock, #add5Clock, #minus5Break, #add5Break, #num, #breakNum, #title1, #title2').show();
+        $('#reset').hide();
     });
 
     //Work Time
