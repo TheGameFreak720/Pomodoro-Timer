@@ -19,13 +19,22 @@ $(document).ready(function () {
                 buzzer.play();
                 clearInterval(counter);
                 var startBreak = setInterval(breakTimer, 1000);
+                $('#num').hide();
             }
 
             $('#num').html(count);
-        }
 
-        function breakTimer() {
-            $('#timeType').html('Break Time: ');
+            function breakTimer() {
+                $('#timeType').html('Break Time: ');
+                $('#breakNum').show();
+                breakTime -= 1;
+
+                if (breakTime === 0) {
+                    clearInterval(startBreak);
+                }
+
+                $('#breakNum').html(breakTime);
+            }
         }
     });
 
