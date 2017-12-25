@@ -8,6 +8,8 @@ $(document).ready(function () {
     //Start Timer
     $('#start').click(function() {
         var counter= setInterval(timer, 1000);
+        count *= 60;
+        breakTime *= 60;
 
         function timer() {
             count -= 1;
@@ -23,7 +25,11 @@ $(document).ready(function () {
                 $('#num').hide();
             }
 
-            $('#num').html(count);
+            if (count%60 >= 10) {
+                $('#num').html(Math.floor(count / 60) + ':' + count%60)
+            } else {
+                $('#num').html(Math.floor(count / 60) + ':' + '0' + count%60)
+            }
 
             function breakTimer() {
                 $('#timeType').html('Break Time: ');
@@ -31,12 +37,17 @@ $(document).ready(function () {
                 breakTime -= 1;
 
                 if (breakTime === 0) {
+                    buzzer.play();
                     clearInterval(startBreak);
                     $('#reset').show();
                     $('#breakNum, #timeType').hide();
                 }
 
-                $('#breakNum').html(breakTime);
+                if (breakTime%60 >= 10) {
+                    $('#breakNum').html(Math.floor(breakTime / 60) + ':' + breakTime%60)
+                } else {
+                    $('#breakNum').html(Math.floor(breakTime / 60) + ':' + '0' + breakTime%60)
+                }
             }
         }
     });
